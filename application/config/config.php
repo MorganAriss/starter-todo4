@@ -1,16 +1,14 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
+defined('BASEPATH') or exit('No direct script access allowed');
 // the menu basics (text navbar)
 $config['menu_choices'] = array(
     'menudata' => array(
         array('name' => 'Home', 'link' => '/'),
-        array('name' => 'Work', 'link' => '/#'),
+        array('name' => 'Work', 'link' => '/views'),
         array('name' => 'Maintenance', 'link' => '/#'),
-        array('name' => 'Help Wanted', 'link' => '/#'),
+        array('name' => 'Help Wanted', 'link' => '/helpme'),
         )
     );
-
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -34,7 +32,6 @@ $config['menu_choices'] = array(
 |
 */
 $config['base_url'] = '/';
-
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -46,7 +43,6 @@ $config['base_url'] = '/';
 |
 */
 $config['index_page'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
@@ -62,8 +58,7 @@ $config['index_page'] = '';
 |
 | WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 */
-$config['uri_protocol']	= 'REQUEST_URI';
-
+$config['uri_protocol']    = 'REQUEST_URI';
 /*
 |--------------------------------------------------------------------------
 | URL suffix
@@ -75,7 +70,6 @@ $config['uri_protocol']	= 'REQUEST_URI';
 | https://codeigniter.com/user_guide/general/urls.html
 */
 $config['url_suffix'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Default Language
@@ -86,8 +80,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
-
+$config['language']    = 'english';
 /*
 |--------------------------------------------------------------------------
 | Default Character Set
@@ -100,7 +93,6 @@ $config['language']	= 'english';
 |
 */
 $config['charset'] = 'UTF-8';
-
 /*
 |--------------------------------------------------------------------------
 | Enable/Disable System Hooks
@@ -110,8 +102,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
-
+$config['enable_hooks'] = false;
 /*
 |--------------------------------------------------------------------------
 | Class Extension Prefix
@@ -125,7 +116,6 @@ $config['enable_hooks'] = FALSE;
 |
 */
 $config['subclass_prefix'] = 'MY_';
-
 /*
 |--------------------------------------------------------------------------
 | Composer auto-loading
@@ -146,8 +136,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
-
+$config['composer_autoload'] = false;
 /*
 |--------------------------------------------------------------------------
 | Allowed URL Characters
@@ -169,7 +158,6 @@ $config['composer_autoload'] = FALSE;
 |
 */
 $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
-
 /*
 |--------------------------------------------------------------------------
 | Enable Query Strings
@@ -195,12 +183,11 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array'] = TRUE;
-$config['enable_query_strings'] = FALSE;
+$config['allow_get_array'] = true;
+$config['enable_query_strings'] = false;
 $config['controller_trigger'] = 'c';
 $config['function_trigger'] = 'm';
 $config['directory_trigger'] = 'd';
-
 /*
 |--------------------------------------------------------------------------
 | Error Logging Threshold
@@ -224,7 +211,6 @@ $config['directory_trigger'] = 'd';
 |
 */
 $config['log_threshold'] = 0;
-
 /*
 |--------------------------------------------------------------------------
 | Error Logging Directory Path
@@ -235,7 +221,6 @@ $config['log_threshold'] = 0;
 |
 */
 $config['log_path'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Log File Extension
@@ -249,7 +234,6 @@ $config['log_path'] = '';
 |
 */
 $config['log_file_extension'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Log File Permissions
@@ -261,7 +245,6 @@ $config['log_file_extension'] = '';
 |            integer notation (i.e. 0700, 0644, etc.)
 */
 $config['log_file_permissions'] = 0644;
-
 /*
 |--------------------------------------------------------------------------
 | Date Format for Logs
@@ -272,7 +255,6 @@ $config['log_file_permissions'] = 0644;
 |
 */
 $config['log_date_format'] = 'Y-m-d H:i:s';
-
 /*
 |--------------------------------------------------------------------------
 | Error Views Directory Path
@@ -283,7 +265,6 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |
 */
 $config['error_views_path'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Cache Directory Path
@@ -294,7 +275,6 @@ $config['error_views_path'] = '';
 |
 */
 $config['cache_path'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Cache Include Query String
@@ -311,8 +291,7 @@ $config['cache_path'] = '';
 |	             of query parameters.
 |
 */
-$config['cache_query_string'] = FALSE;
-
+$config['cache_query_string'] = false;
 /*
 |--------------------------------------------------------------------------
 | Encryption Key
@@ -325,7 +304,6 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = '';
-
 /*
 |--------------------------------------------------------------------------
 | Session Variables
@@ -380,11 +358,10 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = NULL;
-$config['sess_match_ip'] = FALSE;
+$config['sess_save_path'] = null;
+$config['sess_match_ip'] = false;
 $config['sess_time_to_update'] = 300;
-$config['sess_regenerate_destroy'] = FALSE;
-
+$config['sess_regenerate_destroy'] = false;
 /*
 |--------------------------------------------------------------------------
 | Cookie Related Variables
@@ -400,12 +377,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= '';
-$config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
-$config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
-
+$config['cookie_prefix']    = '';
+$config['cookie_domain']    = '';
+$config['cookie_path']        = '/';
+$config['cookie_secure']    = false;
+$config['cookie_httponly']    = false;
 /*
 |--------------------------------------------------------------------------
 | Standardize newlines
@@ -418,8 +394,7 @@ $config['cookie_httponly'] 	= FALSE;
 | (usually \n) and Windows (\r\n).
 |
 */
-$config['standardize_newlines'] = FALSE;
-
+$config['standardize_newlines'] = false;
 /*
 |--------------------------------------------------------------------------
 | Global XSS Filtering
@@ -432,8 +407,7 @@ $config['standardize_newlines'] = FALSE;
 |          for backwards compatibility purposes!
 |
 */
-$config['global_xss_filtering'] = FALSE;
-
+$config['global_xss_filtering'] = false;
 /*
 |--------------------------------------------------------------------------
 | Cross Site Request Forgery
@@ -448,13 +422,12 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-$config['csrf_protection'] = FALSE;
+$config['csrf_protection'] = false;
 $config['csrf_token_name'] = 'csrf_test_name';
 $config['csrf_cookie_name'] = 'csrf_cookie_name';
 $config['csrf_expire'] = 7200;
-$config['csrf_regenerate'] = TRUE;
+$config['csrf_regenerate'] = true;
 $config['csrf_exclude_uris'] = array();
-
 /*
 |--------------------------------------------------------------------------
 | Output Compression
@@ -475,8 +448,7 @@ $config['csrf_exclude_uris'] = array();
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
 */
-$config['compress_output'] = FALSE;
-
+$config['compress_output'] = false;
 /*
 |--------------------------------------------------------------------------
 | Master Time Reference
@@ -489,7 +461,6 @@ $config['compress_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
-
 /*
 |--------------------------------------------------------------------------
 | Rewrite PHP Short Tags
@@ -502,8 +473,7 @@ $config['time_reference'] = 'local';
 | Note: You need to have eval() enabled for this to work.
 |
 */
-$config['rewrite_short_tags'] = FALSE;
-
+$config['rewrite_short_tags'] = false;
 /*
 |--------------------------------------------------------------------------
 | Reverse Proxy IPs
