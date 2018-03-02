@@ -1,7 +1,5 @@
-Do you want a job where you can feel valued? 
+Come work for our company. We are hiring talented copy pasters.
 
-Then look somewhere else. 
+Requirements include copying and pasting at a post secondary level. Use of shortcuts is required.
 
-Otherwise we are looking for people with low self esteem to get bossed around.
-
-Lack of a backbone and the ability to act without thinking are a must.
+Cutting is a _huge_ plus!
