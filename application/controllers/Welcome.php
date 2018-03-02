@@ -1,7 +1,10 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
+
 class Welcome extends Application
 {
+
     /**
      * Index Page for this controller.
      *
@@ -25,6 +28,7 @@ class Welcome extends Application
             }
         }
         $this->data['remaining_tasks'] = $count;
+
     // process the array in reverse, until we have five
     $count = 0;
         foreach (array_reverse($tasks) as $task) {
@@ -36,10 +40,12 @@ class Welcome extends Application
             }
         }
         $this->data['display_tasks'] = $display_tasks;
+
     // and save that as a view parameter
     $this->data['pagebody'] = 'homepage';
         $this->render();
     }
+
     public function render($template = 'template')
     {
         $this->data['menubar'] = $this->parser->parse('_menubar', $this->config->item('menu_choices'), true);
