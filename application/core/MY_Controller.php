@@ -1,4 +1,5 @@
 <?php
+
 /**
  * core/MY_Controller.php
  *
@@ -10,18 +11,22 @@
  */
 class Application extends CI_Controller
 {
+
     /**
      * Constructor.
      * Establish view parameters & load common helpers
      */
+
     public function __construct()
     {
         parent::__construct();
+
         //  Set basic view parameters
         $this->data = array();
         $this->data['pagetitle'] = 'TODO List Manager';
         $this->data['ci_version'] = (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>'.CI_VERSION.'</strong>' : '';
     }
+
     /**
      * Render this page
      */

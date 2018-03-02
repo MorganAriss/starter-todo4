@@ -1,4 +1,5 @@
 <?php
+
 class Helpme extends Application
 {
     public function index()
@@ -9,4 +10,3 @@ class Helpme extends Application
         $this->render();
     }
 }
-?>
