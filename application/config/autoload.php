@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -29,7 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | 7. Models
 |
 */
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Packages
@@ -40,7 +39,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $autoload['packages'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Libraries
@@ -58,8 +56,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('parser');
-
+$autoload['libraries'] = array('parser', 'parsedown', 'session');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Drivers
@@ -80,7 +77,6 @@ $autoload['libraries'] = array('parser');
 |
 */
 $autoload['drivers'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Helper Files
@@ -90,7 +86,6 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 $autoload['helper'] = array('url');
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files
@@ -104,7 +99,6 @@ $autoload['helper'] = array('url');
 |
 */
 $autoload['config'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Language files
@@ -118,7 +112,6 @@ $autoload['config'] = array();
 |
 */
 $autoload['language'] = array();
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Models
@@ -132,4 +125,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('app');
+$autoload['model'] = array('app', 'tasks');
