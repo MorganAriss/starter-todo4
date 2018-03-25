@@ -1,4 +1,5 @@
 <?php
+
 class Mtce extends Application
 {
     private $items_per_page = 10;
@@ -11,6 +12,7 @@ class Mtce extends Application
         {
             $role = $this->session->userdata('userrole');
             $this->data['pagetitle'] = 'TODO List Maintenance ('. $role . ')';            // build the task presentation output
+
             $result = ''; // start with an empty array
             foreach ($tasks as $task) {
                 if (!empty($task->status)) {
@@ -24,15 +26,18 @@ class Mtce extends Application
             }
             }
             $this->data['display_tasks'] = $result;
+
             // and then pass them on
             $this->data['pagebody'] = 'itemlist';
             $this->render();
         }
+
         // Extract & handle a page of items, defaulting to the beginning
         public function page($num = 1)
         {
             $records = $this->tasks->all(); // get all the tasks
             $tasks = array(); // start with an empty extract
+
             // use a foreach loop, because the record indices may not be sequential
             $index = 0; // where are we in the tasks list
             $count = 0; // how many items have we added to the extract
@@ -54,6 +59,7 @@ class Mtce extends Application
             }
             $this->show_page($tasks);
         }
+
         //Build the pagination navbar
         private function pagenav($num)
         {
@@ -66,6 +72,7 @@ class Mtce extends Application
             );
             return $this->parser->parse('itemnav', $parms, true);
         }
+
         // Initiate adding a new task
 public function add()
 {
@@ -73,6 +80,7 @@ public function add()
     $this->session->set_userdata('task', $task);
     $this->showit();
 }
+
 // initiate editing of a task
 public function edit($id = null)
 {
@@ -89,12 +97,14 @@ private function showit()
     $this->load->helper('form');
     $task = $this->session->userdata('task');
     $this->data['id'] = $task->id;
+
     // if no errors, pass an empty message
     if (! isset($this->data['error'])) {
         $this->data['error'] = '';
     }
+
     $fields = array(
-        'ftask'      => form_label('Task description') . form_input('task', $task->task),
+        'ftask'      => form_label('Task description') . form_input('name', $task->name),
         'fpriority'  => form_label('Priority') . form_dropdown('priority', $this->app->priority(), $task->priority),
         'fsize'      => form_label('Size') . form_input('size', $task->size),
         'fgroup'      => form_label('Group') . form_input('group', $task->group),
@@ -102,6 +112,7 @@ private function showit()
         'zsubmit'    => form_submit('submit', 'Update the TODO task'),
     );
     $this->data = array_merge($this->data, $fields);
+
     $this->data['pagebody'] = 'itemedit';
     $this->render();
 }
@@ -111,11 +122,13 @@ public function submit()
     // setup for validation
     $this->load->library('form_validation');
     $this->form_validation->set_rules($this->tasks->rules());
+
     // retrieve & update data transfer buffer
     $task = (array) $this->session->userdata('task');
     $task = array_merge($task, $this->input->post());
     $task = (object) $task;  // convert back to object
     $this->session->set_userdata('task', (object) $task);
+
     // validate away
     if ($this->form_validation->run()) {
         if (empty($task->id)) {
@@ -131,18 +144,21 @@ public function submit()
     }
     $this->showit();
 }
+
 // build a suitable error mesage
 private function alert($message)
 {
     $this->load->helper('html');
     $this->data['error'] = heading($message, 3);
 }
+
 // Forget about this edit
 public function cancel()
 {
     $this->session->unset_userdata('task');
     redirect('/mtce');
 }
+
 // Delete this item altogether
 public function delete()
 {
